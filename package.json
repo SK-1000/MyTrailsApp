@@ -1,0 +1,28 @@
+{
+  "name": "mytrails",
+  "version": "0.1.0",
+  "description": "MyTrails: a Hapi/node application for managing users walk start points",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "lint": "./node_modules/.bin/eslint . --ext .js"
+  },
+  "author": "Sheila Kirwan",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.4",
+    "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "@hapi/cookie": "^11.0.2",
+    "@hapi/hapi": "^20.2.1",
+    "@hapi/vision": "^6.1.0",
+    "dotenv": "^16.0.0",
+    "handlebars": "^4.7.7",
+    "uuid": "^8.3.2"
+  }
+}

@@ -1,0 +1,31 @@
+{{> menu}}
+
+<form class="ui stacked segment form" action="/trail/{{traillist.id}}/updatetrail/{{trail.id}}" method="POST">
+  <div class="two fields">
+    <div class="field">
+      <label>Trail Name</label>
+      <input placeholder="Title" type="text" name="title" value="{{trail.trailname}}">
+    </div>
+    <div class="field">
+      <label>Brief Description</label>
+      <input placeholder="Description" type="text" name="description" value="{{trail.briefdescription}}">
+    </div>
+    <div class="field">
+      <label>Start Point</label>
+      <input placeholder="start" type="text" name="start" value="{{trail.startpoint}}">
+    </div>
+    <div class="field">
+      <label>longitude</label>
+      <input placeholder="00" type="number" name="longitude" value="{{song.longitude}}">
+    </div>
+    <div class="field">
+      <label>latitude</label>
+      <input placeholder="00" type="number" name="latitude" value="{{song.latitude}}">
+    </div>
+    <div class="field">
+      <label>Distance KM</label>
+      <input placeholder="00" type="number" name="distancekm" value="{{song.distancekm}}">
+    </div>
+  </div>
+  <button class="ui blue submit button">Update Song</button>
+</form>
