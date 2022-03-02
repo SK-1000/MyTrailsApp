@@ -20,4 +20,5 @@ export const webRoutes = [
   { method: "GET", path: "/traillist/{id}", config: traillistController.index },
   { method: "POST", path: "/traillist/{id}/addtrail", config: traillistController.addTrail },
   { method: "GET", path: "/traillist/{id}/deletetrail/{trailid}", config: traillistController.deleteTrail },
+  { method: "GET", path: "/trail/{id}/edittrail/{trailid}", config: traillistController.deleteTrail },// don't know if this is correct
 ];

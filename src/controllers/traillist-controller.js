@@ -34,4 +34,12 @@ export const traillistController = {
       return h.redirect(`/traillist/${traillist._id}`);
     },
   },
+  // This edit trail code does not work yet
+  editTrail: {
+    handler: async function(request, h) {
+      const traillist = await db.traillistStore.getTraillistById(request.params.id);
+      await db.trailStore.editTrail(request.params.trailid);
+      return h.redirect(`/traillist/${traillist._id}`);
+    },
+  },
 };
