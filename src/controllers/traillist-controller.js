@@ -1,4 +1,5 @@
 import { db } from "../models/db.js";
+import { TrailSpec } from "../models/joi-schemas.js";
 
 export const traillistController = {
   index: {
@@ -13,6 +14,13 @@ export const traillistController = {
   },
 
   addTrail: {
+    validate: {
+      payload: TrailSpec,
+      options: { abortEarly: false },
+      failAction: function (request, h, error) {
+        return h.view("traillist-view", { title: "Add trail error", errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const traillist = await db.traillistStore.getTraillistById(request.params.id);
       const newTrail = {
