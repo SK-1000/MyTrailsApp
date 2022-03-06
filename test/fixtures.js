@@ -25,3 +25,19 @@ export const maggie = {
       password: "secret",
     },
   ];
+
+  export const scenic = {
+    title: "Scenic Favourites"
+  };
+  
+  export const testTraillists = [
+    {
+      title: "Tough Trails"
+    },
+    {
+      title: "Easy Strolls"
+    },
+    {
+      title: "Mountain Hike"
+    }
+  ];

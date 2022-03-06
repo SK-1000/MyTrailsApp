@@ -1,9 +1,16 @@
 {
   "traillists": [
     {
-      "userid": "0d1721a5-a6d9-44cd-a449-84bfb1f36a1a",
-      "title": "tinas list",
-      "_id": "260549f2-cbf4-4c15-bbc9-f1264c9e73b7"
+      "title": "Tough Trails",
+      "_id": "d5bbabc7-63f7-46c3-96e9-799c462d05fa"
+    },
+    {
+      "title": "Easy Strolls",
+      "_id": "27497f2f-00d7-4bce-86cf-074b4d5e28e5"
+    },
+    {
+      "title": "Mountain Hike",
+      "_id": "d5c373d8-d8c7-45d5-afaa-abbf7702b79f"
     }
   ]
 }

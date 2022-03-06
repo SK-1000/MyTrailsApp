@@ -18,17 +18,19 @@ export const traillistMemStore = {
     return traillists.filter((traillist) => traillist.userid === userid);
   },
  
-  async getTraillistById(id) { 
+  async getTraillistById(id) {
     const list = traillists.find((traillist) => traillist._id === id);
-    list.trails = await trailMemStore.getTrailsByTraillistId(list._id);
-    return list;
+    if (list) {
+      list.trails = await trailMemStore.getTrailsByTraillistId(list._id);
+      return list;
+    }
+    return null;
   },
-
 
   async deleteTraillistById(id) {
     const index = traillists.findIndex((traillist) => traillist._id === id);
-    traillists.splice(index, 1);
-  },
+    if (index !== -1) traillists.splice(index, 1);
+  },    
 
   async deleteAllTraillists() {
     traillists = [];

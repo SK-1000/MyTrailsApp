@@ -1,4 +1,6 @@
 import { v4 } from "uuid";
+// import { db } from "../db";
+
 
 let users = [];
 
@@ -14,16 +16,29 @@ export const userMemStore = {
   },
 
   async getUserById(id) {
-    return users.find((user) => user._id === id);
+    let u = users.find((user) => user._id === id);
+    if (u === undefined) u = null;
+    return u;
   },
 
   async getUserByEmail(email) {
-    return users.find((user) => user.email === email);
+    let u = users.find((user) => user.email === email);
+    if (u === undefined) u = null;
+    return u;
   },
 
+
+  // async deleteUserById(id) {
+  //   const index = users.findIndex((user) => user._id === id);
+  //   users.splice(index, 1);
+  // },
+
+
   async deleteUserById(id) {
-    const index = users.findIndex((user) => user._id === id);
-    users.splice(index, 1);
+    await read();
+    const index = data.users.findIndex((user) => user._id === id);
+    if (index !== -1) data.users.splice(index, 1);
+    await write();
   },
 
   async deleteAll() {
