@@ -10,10 +10,7 @@
     "dev": "nodemon  src/server.js --ignore 'src/models/json/*.json'",
     "test": "mocha --ui tdd test/**/*.js"
   }, 
-   "engines" : {
-    "node": "16.13.2"
-  },
-
+  
   "author": "Sheila Kirwan",
   "license": "ISC",
   "devDependencies": {
