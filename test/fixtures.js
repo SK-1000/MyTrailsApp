@@ -1,3 +1,5 @@
+export const serviceUrl = "http://localhost:3000";
+
 export const maggie = {
     firstName: "Maggie",
     lastName: "Simpson",
@@ -30,6 +32,19 @@ export const maggie = {
     title: "Scenic Favourites"
   };
   
+  export const caves = {
+    "trailname": "Kerry Coastal Trail",
+    "briefdescription": "shoreline",
+    "startpoint": "Inch",
+    "longitude": 52.1244776,
+    "latitude": -9.96834317,
+    "distancekm": 10
+  };
+
+  export const urban = {
+    title: "Cork City Trails"
+  };
+
   export const testTraillists = [
     {
       title: "Tough Trails"
@@ -39,5 +54,31 @@ export const maggie = {
     },
     {
       title: "Mountain Hike"
+    }
+  ];
+  export const testTrails = [
+    {
+      "trailname": "Torc Mountain Trail",
+      "briefdescription": "steps",
+      "startpoint": "Torc Waterfall",
+      "longitude": 52.0032196,
+      "latitude": -9.5056129,
+      "distancekm": 12
+    },
+    {
+      "trailname": "Blue Pool",
+      "briefdescription": "forest",
+      "startpoint": "Muckross Park Hotel",
+      "longitude": 52.0247016,
+      "latitude": -9.4892477,
+      "distancekm": 5
+    },
+    {
+      "trailname": "Glenageenty",
+      "briefdescription": "rural",
+      "startpoint": "Glenageenty car park",
+      "longitude": 52.2734027,
+      "latitude": -9.5308230,
+      "distancekm": 15
     }
   ];

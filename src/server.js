@@ -10,6 +10,8 @@ import { fileURLToPath } from "url";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import { accountsController } from "./controllers/accounts-controller.js";
+import { apiRoutes } from "./api-routes.js";
+
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -54,13 +56,12 @@ async function init() {
   });
    server.auth.default("session");
 
-
-
-  db.init();
-  server.route(webRoutes);
-  await server.start();
-  console.log("Server running on %s", server.info.uri);
-}
+   db.init("mongo");
+   server.route(webRoutes);
+   server.route(apiRoutes);
+   await server.start();
+   console.log("Server running on %s", server.info.uri);
+ }
 
 process.on("unhandledRejection", (err) => {
   console.log(err);
