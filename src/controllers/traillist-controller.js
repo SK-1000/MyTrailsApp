@@ -25,7 +25,7 @@ export const traillistController = {
       const traillist = await db.traillistStore.getTraillistById(request.params.id);
       const newTrail = {
         trailname: request.payload.trailname,
-        briefdescription: request.payload.briefdescription,
+        terraindescription: request.payload.terraindescription,
         startpoint: request.payload.startpoint,
         longitude: Number(request.payload.longitude),
         latitude: Number(request.payload.latitude),
@@ -39,14 +39,6 @@ export const traillistController = {
     handler: async function(request, h) {
       const traillist = await db.traillistStore.getTraillistById(request.params.id);
       await db.trailStore.deleteTrail(request.params.trailid);
-      return h.redirect(`/traillist/${traillist._id}`);
-    },
-  },
-  // This edit trail code does not work yet
-  editTrail: {
-    handler: async function(request, h) {
-      const traillist = await db.traillistStore.getTraillistById(request.params.id);
-      await db.trailStore.editTrail(request.params.trailid);
       return h.redirect(`/traillist/${traillist._id}`);
     },
   },

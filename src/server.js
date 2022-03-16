@@ -11,6 +11,7 @@ import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import { accountsController } from "./controllers/accounts-controller.js";
 import { apiRoutes } from "./api-routes.js";
+import HapiSwagger from "hapi-swagger";
 
 
 
@@ -23,14 +24,33 @@ if (result.error) {
   process.exit(1);
 }
 
+const swaggerOptions = {
+  info: {
+    title: "Playtime API",
+    version: "0.1",
+  },
+};
+
+
+
 async function init() {
   const server = Hapi.server({
     port: 3000,
     host: "localhost",
   });
-  await server.register(Vision);
+  // await server.register(Vision);
   await server.register(Cookie);
-  await server.register(Inert);
+  await server.register([
+    Inert,
+    Vision,
+    {
+      plugin: HapiSwagger,
+      options: swaggerOptions,
+    },
+  ]);
+
+
+  // await server.register(Inert);
   server.validator(Joi);
 
   server.views({

@@ -4,7 +4,7 @@ const { Schema } = Mongoose;
 
 const trailSchema = new Schema({
   trailname: String,
-  briefdescription: String,
+  terraindescription: String,
   startpoint: String,
   longitude: Number,
   latitude: Number,

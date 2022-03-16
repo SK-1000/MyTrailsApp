@@ -40,7 +40,7 @@ export const trailMongoStore = {
 
   async updateTrail(trail, updatedTrail) {
     trail.trailname = updatedTrail.trailname;
-    trail.briefdescription = updatedTrail.briefdescription;
+    trail.terraindescription = updatedTrail.terraindescription;
     trail.startpoint = updatedTrail.startpoint;
     trail.longitude = updatedTrail.longitude;
     trail.latitude = updatedTrail.latitude;

@@ -2,7 +2,7 @@
   "trails": [
     {
       "trailname": "mangerton",
-      "briefdescription": "hilly",
+      "terraindescription": "hilly",
       "startpoint": "gap of Dunloe",
       "longitude": -4,
       "latitude": 12.555555,

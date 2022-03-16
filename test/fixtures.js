@@ -34,7 +34,7 @@ export const maggie = {
   
   export const caves = {
     "trailname": "Kerry Coastal Trail",
-    "briefdescription": "shoreline",
+    "terraindescription": "shoreline",
     "startpoint": "Inch",
     "longitude": 52.1244776,
     "latitude": -9.96834317,
@@ -59,7 +59,7 @@ export const maggie = {
   export const testTrails = [
     {
       "trailname": "Torc Mountain Trail",
-      "briefdescription": "steps",
+      "terraindescription": "steps",
       "startpoint": "Torc Waterfall",
       "longitude": 52.0032196,
       "latitude": -9.5056129,
@@ -67,7 +67,7 @@ export const maggie = {
     },
     {
       "trailname": "Blue Pool",
-      "briefdescription": "forest",
+      "terraindescription": "forest",
       "startpoint": "Muckross Park Hotel",
       "longitude": 52.0247016,
       "latitude": -9.4892477,
@@ -75,7 +75,7 @@ export const maggie = {
     },
     {
       "trailname": "Glenageenty",
-      "briefdescription": "rural",
+      "terraindescription": "rural",
       "startpoint": "Glenageenty car park",
       "longitude": 52.2734027,
       "latitude": -9.5308230,
