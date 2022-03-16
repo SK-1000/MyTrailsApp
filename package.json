@@ -9,7 +9,11 @@
     "lint": "./node_modules/.bin/eslint . --ext .js",
     "dev": "nodemon  src/server.js --ignore 'src/models/json/*.json'",
     "test": "mocha --ui tdd test/**/*.js"
+  }, 
+   "engines" : {
+    "node": "16.13.2"
   },
+
   "author": "Sheila Kirwan",
   "license": "ISC",
   "devDependencies": {
@@ -35,8 +39,5 @@
     "lowdb": "^3.0.0",
     "mongoose": "^6.2.4",
     "uuid": "^8.3.2"
-  },
-  "engines" : {
-    "node": "16.13.2"
   }
 }
