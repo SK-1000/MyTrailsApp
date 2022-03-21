@@ -81,4 +81,10 @@ export const maggie = {
       "latitude": -9.5308230,
       "distancekm": 15
     }
+
   ];
+
+  export const maggieCredentials = {
+    email: "maggie@simpson.com",
+    password: "secret"
+  };

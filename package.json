@@ -9,8 +9,7 @@
     "lint": "./node_modules/.bin/eslint . --ext .js",
     "dev": "nodemon  src/server.js --ignore 'src/models/json/*.json'",
     "test": "mocha --ui tdd test/**/*.js"
-  }, 
-  
+  },
   "author": "Sheila Kirwan",
   "license": "ISC",
   "devDependencies": {
@@ -31,8 +30,10 @@
     "@hapi/vision": "^6.1.0",
     "dotenv": "^16.0.0",
     "handlebars": "^4.7.7",
+    "hapi-auth-jwt2": "^10.2.0",
     "hapi-swagger": "^14.2.5",
     "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
     "lowdb": "^3.0.0",
     "mongoose": "^6.2.4",
     "uuid": "^8.3.2"

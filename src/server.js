@@ -7,11 +7,13 @@ import Handlebars from "handlebars";
 import path from "path";
 import Joi from "joi";
 import { fileURLToPath } from "url";
+import HapiSwagger from "hapi-swagger";
+import jwt from "hapi-auth-jwt2";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import { accountsController } from "./controllers/accounts-controller.js";
 import { apiRoutes } from "./api-routes.js";
-import HapiSwagger from "hapi-swagger";
+import { validate } from "./api/jwt-utils.js";
 
 
 
@@ -26,11 +28,18 @@ if (result.error) {
 
 const swaggerOptions = {
   info: {
-    title: "Playtime API",
-    version: "0.1",
+    title: "mytrails API",
+    version: "0.1"
   },
+  securityDefinitions: {
+    jwt: {
+      type: "apiKey",
+      name: "Authorization",
+      in: "header"
+    }
+  },
+  security: [{ jwt: [] }]
 };
-
 
 
 async function init() {
@@ -40,6 +49,7 @@ async function init() {
   });
   // await server.register(Vision);
   await server.register(Cookie);
+  await server.register(jwt);
   await server.register([
     Inert,
     Vision,
@@ -49,6 +59,11 @@ async function init() {
     },
   ]);
 
+  server.auth.strategy("jwt", "jwt", {
+    key: process.env.cookie_password,
+    validate: validate,
+    verifyOptions: { algorithms: ["HS256"] }
+  });
 
   // await server.register(Inert);
   server.validator(Joi);

@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { mytrailsService } from "./mytrails-service.js";
-import { maggie, scenic, testTraillists, testTrails, caves } from "../fixtures.js";
+import { maggie, scenic, testTraillists, testTrails, caves, maggieCredentials } from "../fixtures.js";
 
 suite("Trail API tests", () => {
   let user = null;
@@ -9,10 +9,14 @@ suite("Trail API tests", () => {
 
   
   setup(async () => {
-    await mytrailsService.deleteAllTraillists();
-    await mytrailsService.deleteAllUsers();
-    await mytrailsService.deleteAllTrails();
+    mytrailsService.clearAuth();
     user = await mytrailsService.createUser(maggie);
+    await mytrailsService.authenticate(maggieCredentials);
+    await mytrailsService.deleteAllTraillists();
+    await mytrailsService.deleteAllTrails();
+    await mytrailsService.deleteAllUsers();
+    user = await mytrailsService.createUser(maggie);
+    await mytrailsService.authenticate(maggieCredentials);
     scenic.userid = user._id;
     toughTrails = await mytrailsService.createTraillist(scenic);
   });

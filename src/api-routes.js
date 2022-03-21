@@ -19,4 +19,9 @@ export const apiRoutes = [
   { method: "POST", path: "/api/traillists/{id}/trails", config: trailApi.create },
   { method: "DELETE", path: "/api/trails", config: trailApi.deleteAll },
   { method: "DELETE", path: "/api/trails/{id}", config: trailApi.deleteOne },
+
+
+  { method: "POST", path: "/api/users/authenticate", config: userApi.authenticate },
+
+
 ];
