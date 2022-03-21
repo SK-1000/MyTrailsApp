@@ -1,6 +1,7 @@
 import Boom from "@hapi/boom";
-import { TraillistSpec } from "../models/joi-schemas.js";
+import { IdSpec, TraillistArraySpec, TraillistSpec, TraillistSpecPlus } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
+import { validationError } from "./logger.js";
 
 export const traillistApi = {
   find: {
@@ -13,6 +14,10 @@ export const traillistApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    response: { schema: TraillistArraySpec, failAction: validationError },
+    description: "Get all traillists",
+    notes: "Returns all traillists",
   },
 
   findOne: {
@@ -21,13 +26,18 @@ export const traillistApi = {
       try {
         const traillist = await db.traillistStore.getTraillistById(request.params.id);
         if (!traillist) {
-          return Boom.notFound("No Traillist with this id");
+          return Boom.notFound("No traillist with this id");
         }
         return traillist;
       } catch (err) {
         return Boom.serverUnavailable("No Traillist with this id");
       }
     },
+    tags: ["api"],
+    description: "Find a Traillist",
+    notes: "Returns a traillist",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: TraillistSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -44,6 +54,11 @@ export const traillistApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Create a Traillist",
+    notes: "Returns the newly created Traillist",
+    validate: { payload: TraillistSpec, failAction: validationError },
+    response: { schema: TraillistSpecPlus, failAction: validationError },
   },
 
   deleteOne: {
@@ -60,6 +75,9 @@ export const traillistApi = {
         return Boom.serverUnavailable("No Traillist with this id");
       }
     },
+    tags: ["api"],
+    description: "Delete a traillist",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 
   deleteAll: {
@@ -72,5 +90,7 @@ export const traillistApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Delete all TraillistApi",
   },
 };
