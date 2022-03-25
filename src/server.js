@@ -9,6 +9,7 @@ import Joi from "joi";
 import { fileURLToPath } from "url";
 import HapiSwagger from "hapi-swagger";
 import jwt from "hapi-auth-jwt2";
+import { appendFile } from "fs";
 import { webRoutes } from "./web-routes.js";
 import { db } from "./models/db.js";
 import { accountsController } from "./controllers/accounts-controller.js";
@@ -16,6 +17,7 @@ import { apiRoutes } from "./api-routes.js";
 import { validate } from "./api/jwt-utils.js";
 
 
+// app.listen(process.env.PORT || 3000);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,7 +25,7 @@ const __dirname = path.dirname(__filename);
 const result = dotenv.config();
 if (result.error) {
   console.log(result.error.message);
-  process.exit(1);
+  // process.exit(1);
 }
 
 const swaggerOptions = {
@@ -81,8 +83,8 @@ async function init() {
 
   server.auth.strategy("session", "cookie", {
     cookie: {
-      name: process.env.COOKIE_NAME,
-      password: process.env.COOKIE_PASSWORD,
+      name: process.env.cookie_name,
+      password: process.env.cookie_password,
       isSecure: false,
     },
     redirectTo: "/",

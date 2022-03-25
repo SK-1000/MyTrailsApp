@@ -18,6 +18,13 @@ export const traillistMongoStore = {
     return null;
   },
 
+  async updateTraillist(updatedTraillist) {
+    const traillist = await Traillist.findOne({ _id: updatedTraillist._id });
+    traillist.title = updatedTraillist.title;
+    traillist.img = updatedTraillist.img;
+    await traillist.save();
+  },
+
   async addTraillist(traillist) {
     const newTraillist = new Traillist(traillist);
     const traillistObj = await newTraillist.save();

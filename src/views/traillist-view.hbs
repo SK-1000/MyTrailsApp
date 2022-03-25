@@ -1,9 +1,12 @@
 {{> menu}}
 
-<section class="section">
-  <div class="title">
-    {{traillist.title}}
+<section class="section columns is-vcentered">
+  <div class="column has-text-centered">
+    <div class="title">
+      {{traillist.title}}
+    </div>
+    {{> list-trails}}
+    {{> add-trail}}
+    {{> traillist-image }}
   </div>
-  {{> list-trails}}
-  {{> add-trail}}
 </section>
