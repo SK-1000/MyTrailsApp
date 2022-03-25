@@ -3,6 +3,7 @@ import { dashboardController } from "./controllers/dashboard-controller.js";
 import { aboutController } from "./controllers/about-controller.js";
 import { traillistController } from "./controllers/traillist-controller.js";
 import { adminController } from "./controllers/admin-controller.js"
+import { trailController } from "./controllers/trail-controller.js"
 
 export const webRoutes = [
   { method: "GET", path: "/", config: accountsController.index },
@@ -27,6 +28,9 @@ export const webRoutes = [
 
   { method: "GET", path: "/admin", config: adminController.index },
   { method: "GET", path: "/admin/deleteuser/{id}", config: adminController.deleteUser },
+
+  { method: "GET", path: "/trail/{id}/edittrail/{trailid}", config: trailController.index },
+  { method: "POST", path: "/trail/{id}/updatetrail/{trailid}", config: trailController.update },
 
   { method: "POST", path: "/traillist/{id}/uploadimage", config: traillistController.uploadImage },
 ];
