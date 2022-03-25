@@ -1,5 +1,6 @@
 import { TrailSpec } from "../models/joi-schemas.js";
 import { db } from "../models/db.js";
+// import { route } from "@hapi/hapi/lib/cors";
 
 export const trailController = {
   index: {
