@@ -26,4 +26,11 @@ I have incorporated the following during the project
 -git and Commit history, this structured readme, Tagged Release, Master Branch.
 
 
+The frameworks/libraries that used for this project:
 
+* Node.js (https://nodejs.org/en/)
+* Handlebars.js](https://handlebarsjs.com/)
+* Hapi.js (https://hapi.dev/)
+* Joi.js(https://github.com/sideway/joi)
+* Eslint(https://eslint.org/)
+* Prettier(https://prettier.io/)
