@@ -12,18 +12,13 @@ I would also in a future phase, make it possible for a non-signed up user to vie
 choose to view these trails by category i.e. terrain description.
 
 
-I have incorporated the following during the project
--Accounts
---- Signup/Login, Cookie Authentication/User Settings, BasicAdmin Account List/Remove users
--Features
----Name, Description, Location (lat,lng), Category called Terrain Description and an upload image functionality with Cloudinary.
--API
----Basic Api, Multiple unit tests which are all passing, Open Api (Swagger) and JWT
--Models
----Memory, JSON, and MONGO /ROBO3T
--Deployment
----Local Host, Cloud Atlas and Heroku. Still working on glitch.
--git and Commit history, this structured readme, Tagged Release, Master Branch.
+I have incorporated the following features as part of this project:
+* Accounts -- Signup/Login, Cookie Authentication/User Settings, BasicAdmin Account List/Remove users
+* Features--Name, Description, Location (lat,lng), Category called Terrain Description and an upload image functionality with Cloudinary.
+* API--Basic Api, Multiple unit tests which are all passing, Open Api (Swagger) and JWT
+* Models-Memory, JSON, and MONGO /ROBO3T
+* Deployment--Local Host, Cloud Atlas and Heroku. Still working on glitch.
+* git and Commit history, this structured readme, Tagged Release, Master Branch.
 
 
 The frameworks/libraries that used for this project:
