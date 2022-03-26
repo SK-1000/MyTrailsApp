@@ -17,7 +17,7 @@ I have incorporated the following features as part of this project:
 * Features--Name, Description, Location (lat,lng), Category called Terrain Description and an upload image functionality with Cloudinary.
 * API--Basic Api, Multiple unit tests which are all passing, Open Api (Swagger) and JWT
 * Models-Memory, JSON, and MONGO /ROBO3T
-* Deployment--Local Host, Cloud Atlas and Heroku. Still working on glitch.
+* Deployment--Local Host, Cloud Atlas and Heroku.
 * git and Commit history, this structured readme, Tagged Release, Master Branch.
 
 
